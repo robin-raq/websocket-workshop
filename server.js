@@ -15,8 +15,17 @@ app.use(express.static(path.join(__dirname, "public")));
 // Initialize socket, pass in server and run when client connects
 const io = socketio(server);
 io.on("connection", (socket) => {
+  //Logs new connection on server
   console.log("New WS Connection...");
 
-  // Broadcast Welcome Message from client to server
+  // Welcome Message from server to client that's connecting
   socket.emit("message", "Welcome to TuneChat");
+
+  // Broadcast when a user connects
+  socket.broadcast.emit("message", "A user has joined the chat");
+
+  // Runs when client disconnects
+  socket.on("disconnect", () => {
+    io.emit("message", "A user has left the chat");
+  });
 });
