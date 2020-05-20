@@ -1,0 +1,36 @@
+{
+  "name": "tunechat",
+  "version": "1.0.0",
+  "description": "Realtime chat app with rooms and tunes",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/robin-raq/websocket-workshop.git"
+  },
+  "keywords": [
+    "chatpp",
+    "node.js",
+    "socket.io",
+    "websockets",
+    "tone.js"
+  ],
+  "author": "Raq Robinson",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/robin-raq/websocket-workshop/issues"
+  },
+  "homepage": "https://github.com/robin-raq/websocket-workshop#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "moment": "^2.26.0",
+    "socket.io": "^2.3.0",
+    "tone": "^13.8.25"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
