@@ -2,6 +2,7 @@ const path = require("path");
 const http = require("http");
 const express = require("express");
 const socketio = require("socket.io");
+const formatMessage = require("./utils/messages");
 
 // Initialize and run express server
 const app = express();
@@ -19,19 +20,22 @@ io.on("connection", (socket) => {
   console.log("New WS Connection...");
 
   // Welcome Message from server to client that's connecting
-  socket.emit("message", "Welcome to TuneChat");
+  socket.emit("message", formatMessage("ChatBot", "Welcome to TuneChat"));
 
   // Broadcast when a user connects
-  socket.broadcast.emit("message", "A user has joined the chat");
+  socket.broadcast.emit(
+    "message",
+    formatMessage("ChatBot", "A user has joined the chat")
+  );
 
   // Runs when client disconnects
   socket.on("disconnect", () => {
-    io.emit("message", "A user has left the chat");
+    io.emit("message", formatMessage("ChatBot ", "A user has left the chat"));
   });
 
   // Listen for new chatMessage and emit on receipt
   socket.on("chatMessage", (msg) => {
     console.log(msg);
-    io.emit("message", msg);
+    io.emit("message", formatMessage("USER ", msg));
   });
 });
