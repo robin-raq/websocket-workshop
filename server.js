@@ -3,6 +3,12 @@ const http = require("http");
 const express = require("express");
 const socketio = require("socket.io");
 const formatMessage = require("./utils/messages");
+const {
+  userJoin,
+  getCurrentUser,
+  userLeave,
+  getRoomUsers,
+} = require("./utils/users");
 
 // Initialize and run express server
 const app = express();
@@ -19,23 +25,38 @@ io.on("connection", (socket) => {
   //Logs new connection on server
   console.log("New WS Connection...");
 
-  // Welcome Message from server to client that's connecting
-  socket.emit("message", formatMessage("ChatBot", "Welcome to TuneChat"));
+  socket.on("joinRoom", ({ username, room }) => {
+    // creates userObj calling userJoin function the joins specified room
+    const user = userJoin(socket.id, username, room);
+    socket.join(user.room);
 
-  // Broadcast when a user connects
-  socket.broadcast.emit(
-    "message",
-    formatMessage("ChatBot", "A user has joined the chat")
-  );
+    // Welcome Message from server to client that's connecting
+    socket.emit("message", formatMessage("ChatBot", "Welcome to TuneChat"));
 
-  // Runs when client disconnects
-  socket.on("disconnect", () => {
-    io.emit("message", formatMessage("ChatBot ", "A user has left the chat"));
+    // Broadcast when a user connects
+    socket.broadcast
+      .to(user.room)
+      .emit(
+        "message",
+        formatMessage("ChatBot", `${user.username} has joined the chat`)
+      );
   });
 
   // Listen for new chatMessage and emit on receipt
   socket.on("chatMessage", (msg) => {
+    const user = getCurrentUser(socket.id);
     console.log(msg);
-    io.emit("message", formatMessage("USER ", msg));
+    io.to(user.room).emit("message", formatMessage(`${user.username}`, msg));
+  });
+
+  // Runs when client disconnects
+  socket.on("disconnect", () => {
+    const user = userLeave(socket.id);
+    if (user) {
+      io.to(user.room).emit(
+        "message",
+        formatMessage("ChatBot ", `${user.username} has left the chat`)
+      );
+    }
   });
 });
