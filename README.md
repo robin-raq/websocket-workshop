@@ -10,7 +10,11 @@ Built with a 🖤 of 🎵, 🔍and ✨ by <a href='https://github.com/robin-raq'
 
 ## **Demo**
 
+![tune-chat-demo](/public/images/demo.gif)
+
 ## **Features**
+
+Realtime chat app with chatbot, multiple rooms and full user functionality. The final version will allow users to send sad, happy or meh chords to each other over websockets!
 
 ## **Tech Stack**
 
@@ -26,6 +30,7 @@ This web app makes use of the following:
 
 - [Font Awesome](https://fontawesome.com/) - Font and icon toolkit based on CSS and LESS
 - [Moment.js](https://momentjs.com/) - NPM package for formation dates and times
+- [QS](https://cdnjs.com/libraries/qs) - A querystring parser
 - [Tone.js](https://tonejs.github.io/) - JavaScript Framework for creating interactive music in the browser
 
 ## **Prerequisites**
@@ -33,6 +38,7 @@ This web app makes use of the following:
 Before you begin, ensure you have installed the latest version of:
 
 - [Node.js and npm](https://nodejs.org/en/)
+- [Express](https://expressjs.com/)
 
 ## **Installation**
 
