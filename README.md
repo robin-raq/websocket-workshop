@@ -15,7 +15,7 @@ Built with a 🖤 of 🎵, 🔍and ✨ by <a href='https://github.com/robin-raq'
 
 ## **Try It Here**
 
-![live](https://tune-chat.glitch.me)
+[TuneChat.io](https://tune-chat.glitch.me)
 
 ## **Features**
 
