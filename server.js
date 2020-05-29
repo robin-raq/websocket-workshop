@@ -41,7 +41,7 @@ io.on("connection", (socket) => {
         formatMessage("ChatBot", `${user.username} has joined the chat`)
       );
 
-    //Send users and room info
+    //Send users and room info client side
     io.to(user.room).emit("roomUsers", {
       room: user.room,
       users: getRoomUsers(user.room),
@@ -51,8 +51,19 @@ io.on("connection", (socket) => {
   // Listen for new chatMessage and emit on receipt
   socket.on("chatMessage", (msg) => {
     const user = getCurrentUser(socket.id);
-    console.log(msg);
     io.to(user.room).emit("message", formatMessage(`${user.username}`, msg));
+  });
+
+  // Listen for a new note
+  socket.on("note", (note) => {
+    const user = getCurrentUser(socket.id);
+    io.to(user.room).emit("note", note);
+  });
+
+  // Listen for chordMessage
+  socket.on("chordMessage", (chordMsg) => {
+    const user = getCurrentUser(socket.id);
+    io.to(user.room).emit("chordMessage", chordMsg);
   });
 
   // Runs when client disconnects

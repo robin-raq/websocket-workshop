@@ -39,8 +39,21 @@
           />
           <button class="btn"><i class="fas fa-paper-plane"></i> Send</button>
         </form>
+        <div class="chord-btns">
+          <tone-button label="Sad Chord" id="sad🎶">Sad Chord</tone-button>
+          <tone-button label="Happy Chord" id="happy🎶"
+            >Happy Chord</tone-button
+          >
+          <tone-button label="Meh Chord" id="meh🎶">Meh Chord</tone-button>
+        </div>
+        <div class="keyboard">
+          <tone-keyboard octaves="2"></tone-keyboard>
+        </div>
       </div>
     </div>
+    <script src="https://unpkg.com/@webcomponents/webcomponentsjs@^2/webcomponents-bundle.js"></script>
+    <script src="https://unpkg.com/tone"></script>
+    <script src="https://unpkg.com/@tonejs/ui"></script>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.9.4/qs.min.js"
       integrity="sha256-ijqLssetA1NMNjZ+w1zaUafQQLm4IW5OoM8O+4tatME="
