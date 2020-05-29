@@ -1,16 +1,21 @@
-<h1 align='center'><b> Websocket w/ tone.js Workshop </b>
+<h1 align='center'><b> TuneChat </b>
 <a href ="https://remotemusichackathon.splashthat.com/">Remote Music Hackathon</a> </h1>  
-<p align='center'> A full stack <code>Node.js</code>, <code>JavaScript</code> chat app, that allows users to send <code>Tone.js</code> tones via a <code>Socket.io</code> web socket. 
+<h3>Websocket w/ tone.js Workshop</h3>
+
+<p align='center'> A full stack <code>Node.js</code>, <code>JavaScript</code> chat app, that allows users to send <code>Tone.js</code> chords and keys via a <code>Socket.io</code> web socket. 
 </p>
 
 <p align="center">
-Built with a 🖤 of 🎵, 🔍and ✨ by <a href='https://github.com/robin-raq'> Raq Robinson. </a> The Chat portion of this app was developed by following along with this<a href='https://www.youtube.com/watch?v=jD7FnbI76Hg&t=22s'> Traversy Media tutorial</a> Musical interactivity employs <a href='https://tonejs.github.io/'> Tone.js</a>
-
+Built with a 🖤 of 🎵, 🔍and ✨ by <a href='https://github.com/robin-raq'> Raq Robinson. </a> The Chat portion of this app references this<a href='https://www.youtube.com/watch?v=jD7FnbI76Hg&t=22s'> Traversy Media tutorial</a> Musical interactivity employs <a href='https://tonejs.github.io/'> Tone.js</a>
 </p>
 
 ## **Demo**
 
 ![tune-chat-demo](/public/images/demo.gif)
+
+## **Try It Here**
+
+![live](https://tune-chat.glitch.me)
 
 ## **Features**
 
@@ -22,7 +27,7 @@ This web app makes use of the following:
 
 **Backend**
 
-- [Node.js](https://tonejs.github.io/) - JavaScript Runtime
+- [Node.js](https://nodejs.org/en/) - JavaScript Runtime
 - [Express.js](https://expressjs.com/) - Node.js web application framework
 - [Socket.io](https://socket.io/) - Web socket framework Runtime
 
