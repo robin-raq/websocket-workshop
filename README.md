@@ -19,7 +19,7 @@ Built with a 🖤 of 🎵, 🔍and ✨ by <a href='https://github.com/robin-raq'
 
 ## **Features**
 
-Realtime chat app with chatbot, multiple rooms and full user functionality. The final version will allow users to send sad, happy or meh chords to each other over websockets!
+Realtime chat app with chatbot, multiple rooms and full user functionality. Allows users to keyboard notes, send sad, happy or meh chords to each other over websockets!
 
 ## **Tech Stack**
 
