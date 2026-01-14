@@ -9,7 +9,7 @@
 Built with a 🖤 of 🎵, 🔍and ✨ by <a href='https://github.com/robin-raq'> Raq Robinson. </a> The Chat portion of this app references this<a href='https://www.youtube.com/watch?v=jD7FnbI76Hg&t=22s'> Traversy Media tutorial</a> Musical interactivity employs <a href='https://tonejs.github.io/'> Tone.js</a>
 </p>
 
-## **Demo** (click image to view)
+## **Demo**
 
 ![tune-chat-demo](/public/images/demo.gif)
 
