@@ -13,10 +13,6 @@ Built with a 🖤 of 🎵, 🔍and ✨ by <a href='https://github.com/robin-raq'
 
 ![tune-chat-demo](/public/images/demo.gif)
 
-## **Try It Here**
-
-[TuneChat.io](https://tune-chat.glitch.me)
-
 ## **Features**
 
 Realtime chat app with chatbot, multiple rooms and full user functionality. Allows users to keyboard notes, send sad, happy or meh chords to each other over websockets!
